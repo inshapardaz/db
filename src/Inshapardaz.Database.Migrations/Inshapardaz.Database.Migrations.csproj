@@ -9,6 +9,7 @@
     <PackageReference Include="FluentMigrator" Version="3.2.1" />
     <PackageReference Include="FluentMigrator.Runner" Version="3.2.1" />
     <PackageReference Include="FluentMigrator.Runner.SqlServer" Version="3.2.1" />
+    <PackageReference Include="McMaster.Extensions.CommandLineUtils" Version="2.4.2" />
   </ItemGroup>
 
 </Project>

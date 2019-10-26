@@ -1,4 +1,5 @@
 ﻿using FluentMigrator.Runner;
+using McMaster.Extensions.CommandLineUtils;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 
@@ -6,9 +7,16 @@ namespace Inshapardaz.Database.Migrations
 {
     class Program
     {
-        static void Main(string[] args)
+
+         [Option(ShortName = "c", Description = "Connection string to connect to database. Defaults to localhost")]
+        public string ConnectionString { get; } = "data source=.;Database=Inshapardaz;integrated security=True;";
+
+        public static int Main(string[] args)
+        => CommandLineApplication.Execute<Program>(args);
+
+        private void OnExecute()
         {
-            var serviceProvider = CreateServices();
+            var serviceProvider = CreateServices(ConnectionString);
 
             using (var scope = serviceProvider.CreateScope())
             {
@@ -16,13 +24,13 @@ namespace Inshapardaz.Database.Migrations
             }
         }
 
-        private static IServiceProvider CreateServices()
+        private static IServiceProvider CreateServices(string connectionString)
         {
             return new ServiceCollection()
                 .AddFluentMigratorCore()
                 .ConfigureRunner(rb => rb
                     .AddSqlServer()
-                    .WithGlobalConnectionString("data source=.;Database=Inshapardaz;integrated security=True;")
+                    .WithGlobalConnectionString(connectionString)
                     .ScanIn(typeof(Program).Assembly).For.Migrations())
                 .AddLogging(lb => lb.AddFluentMigratorConsole())
                 .BuildServiceProvider(false);
