@@ -14,4 +14,4 @@ before_build:
 
 # Building
 build_script:
-  - cmd: dotnet run --project .\src\Inshapardaz.Database.Migrations\Inshapardaz.Database.Migrations.csproj -c $env:ConnectionString
+  - cmd: dotnet run --project .\src\Inshapardaz.Database.Migrations\Inshapardaz.Database.Migrations.csproj -- -c $env:ConnectionString
