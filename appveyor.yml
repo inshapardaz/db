@@ -2,10 +2,16 @@ version: 1.0.{build}
 max_jobs: 1
 image: Visual Studio 2019
 
+
+environment:
+  ConnectionString:
+    secure: 77HcU2a57ZxP00HyoA80j3nY9GGcSdBuuUoyj81g+Dc1uzwuINWvzj6NcgMOAf16maRocp7N3lrgTInM8Ep+r+2s1yRx1tPojXTWlBYJVUah8kQKH1IEW7uZBq4L6Vga7dh8CRSuWh8YNVRczFTxAw==
+    
+
 #Before the build starts
 before_build:
 - cmd: dotnet restore ./Inshapardaz.Database.sln
 
 # Building
 build_script:
-  - cmd: dotnet build src/Inshapardaz.Database.Migrations/Inshapardaz.Database.Migrations.csproj
+  - cmd: dotnet run --project .\src\Inshapardaz.Database.Migrations\Inshapardaz.Database.Migrations.csproj -c $ConnectionString
