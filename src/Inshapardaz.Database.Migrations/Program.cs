@@ -9,8 +9,8 @@ namespace Inshapardaz.Database.Migrations
     {
 
          [Option(ShortName = "c", Description = "Connection string to connect to database. Defaults to localhost")]
-        public string ConnectionString { get; } = "data source=.;Database=Inshapardaz;integrated security=True;";
-
+        public string ConnectionString { get; } = 
+            "data source=.;Database=Inshapardaz;integrated security=True;";
         public static int Main(string[] args)
         => CommandLineApplication.Execute<Program>(args);
 
@@ -20,6 +20,7 @@ namespace Inshapardaz.Database.Migrations
 
             using (var scope = serviceProvider.CreateScope())
             {
+                Console.WriteLine($"CONNECTIONSTRING = {ConnectionString}");
                 UpdateDatabase(scope.ServiceProvider);
             }
         }
