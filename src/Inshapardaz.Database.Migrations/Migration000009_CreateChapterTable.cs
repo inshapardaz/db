@@ -1,19 +1,19 @@
 ﻿using FluentMigrator;
 
-namespace Inshapardaz.Database.Migrations.Migrations
+namespace Inshapardaz.Database.Migrations
 {
-    [Migration(20190930221800)]
-    public class Migration20190930221800_CreateChapterTable : Migration
+    [Migration(000009)]
+    public class Migration000009_CreateChapterTable : Migration
     {
         public override void Up()
         {
             Create.Table("Chapter")
                 .InSchema("Library")
-                .WithColumn("Id").AsInt64().PrimaryKey()
-                .WithColumn("Title").AsString().NotNullable()
-                .WithColumn("BookId").AsInt64()
+                .WithColumn("Id").AsInt32().PrimaryKey().Identity()
+                .WithColumn("Title").AsString(int.MaxValue).NotNullable()
+                .WithColumn("BookId").AsInt32().Indexed("IX_Chapter_BookId")
                 .WithColumn("ChapterNumber").AsInt32();
-            Create.ForeignKey()
+            Create.ForeignKey("FK_Chapter_Book_BookId")
                 .FromTable("Chapter").InSchema("Library").ForeignColumn("BookId")
                 .ToTable("Book").InSchema("Library").PrimaryColumn("Id")
                 .OnDelete(System.Data.Rule.Cascade);

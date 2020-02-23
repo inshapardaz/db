@@ -1,16 +1,16 @@
 ﻿using FluentMigrator;
 
-namespace Inshapardaz.Database.Migrations.Migrations
+namespace Inshapardaz.Database.Migrations
 {
-    [Migration(20190930220000)]
-    public class Migration20190930220000_CreateCategoryTable : Migration
+    [Migration(000005)]
+    public class Migration000005_CreateCategoryTable : Migration
     {
         public override void Up()
         {
             Create.Table("Category")
                 .InSchema("Library")
-                .WithColumn("Id").AsInt64().PrimaryKey().Identity()
-                .WithColumn("Name").AsString().NotNullable();
+                .WithColumn("Id").AsInt32().PrimaryKey().Identity()
+                .WithColumn("Name").AsString(int.MaxValue).NotNullable();
         }
 
         public override void Down()

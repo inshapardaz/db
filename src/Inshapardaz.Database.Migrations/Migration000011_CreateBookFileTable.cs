@@ -1,25 +1,25 @@
 ﻿using FluentMigrator;
 
-namespace Inshapardaz.Database.Migrations.Migrations
+namespace Inshapardaz.Database.Migrations
 {
-    [Migration(20190930222500)]
-    public class Migration20190930222500_CreateBookFileTable : Migration
+    [Migration(000011)]
+    public class Migration000011_CreateBookFileTable : Migration
     {
         public override void Up()
         {
             Create.Table("BookFile")
                 .InSchema("Library")
-                .WithColumn("Id").AsInt64().PrimaryKey()
-                .WithColumn("BookId").AsInt64()
-                .WithColumn("FileId").AsInt64();
+                .WithColumn("Id").AsInt32().PrimaryKey().Identity()
+                .WithColumn("BookId").AsInt32().Indexed("IX_BookFile_BookId")
+                .WithColumn("FileId").AsInt32().Indexed("IX_BookFile_FileId");
 
-            Create.ForeignKey()
+            Create.ForeignKey("FK_BookFile_Book_BookId")
                 .FromTable("BookFile").InSchema("Library").ForeignColumn("BookId")
                 .ToTable("Book").InSchema("Library").PrimaryColumn("Id")
                 .OnDelete(System.Data.Rule.Cascade);
-            Create.ForeignKey()
+            Create.ForeignKey("FK_BookFile_File_FileId")
                 .FromTable("BookFile").InSchema("Library").ForeignColumn("FileId")
-                .ToTable("File").InSchema("Library").PrimaryColumn("Id")
+                .ToTable("File").InSchema("Inshapardaz").PrimaryColumn("Id")
                 .OnDelete(System.Data.Rule.Cascade);
         }
 
