@@ -20,7 +20,6 @@ namespace Inshapardaz.Database.Migrations
 
             using (var scope = serviceProvider.CreateScope())
             {
-                Console.WriteLine($"CONNECTIONSTRING = {ConnectionString}");
                 UpdateDatabase(scope.ServiceProvider);
             }
         }
