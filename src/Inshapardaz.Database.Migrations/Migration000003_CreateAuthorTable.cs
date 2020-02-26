@@ -3,7 +3,7 @@
 namespace Inshapardaz.Database.Migrations
 {
     [Migration(000003)]
-    public class Migration000003_CreateAuthorsTable : Migration
+    public class Migration000003_CreateAuthorTable : Migration
     {
         public override void Up()
         {

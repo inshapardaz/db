@@ -14,7 +14,7 @@ namespace Inshapardaz.Database.Migrations
                  .Indexed("IDX_AuthorName");
 
             Create.ForeignKey("FK_Author_Image")
-                  .FromTable(Tables.Author).InSchema(Schemas.Library).ForeignColumn("ImageId")
+                  .FromTable(Tables.Author).InSchema(Schemas.Library).ForeignColumn(Columns.ImageId)
                   .ToTable(Tables.File).InSchema(Schemas.Inshapardaz).PrimaryColumn(Columns.Id)
                   .OnDelete(System.Data.Rule.SetDefault);
         }
