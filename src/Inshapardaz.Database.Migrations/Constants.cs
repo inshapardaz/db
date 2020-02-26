@@ -27,6 +27,8 @@ namespace Inshapardaz.Database.Migrations
         public static string ArticleText => "ArticleText";
         public static string BookPage => "BookPage";
         public static string Library => "Library";
+        public static string BookShelf => "BookShelf";
+        public static string BookShelfBook => "BookShelfBook";
     }
 
     public static class Columns
