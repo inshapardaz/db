@@ -3,7 +3,7 @@
 namespace Inshapardaz.Database.Migrations
 {
     [Migration(000024)]
-    public class Migration000024_CreateBookToLibrary : Migration
+    public class Migration000024_AddBookToLibrary : Migration
     {
         public override void Up()
         {
