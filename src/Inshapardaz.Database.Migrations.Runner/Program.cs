@@ -3,14 +3,14 @@ using FluentMigrator.Runner;
 using McMaster.Extensions.CommandLineUtils;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Inshaprdaz.Database.Migrations.Runner
+namespace Inshapardaz.Database.Migrations.Runner
 {
-    class Program
+    internal class Program
     {
+        [Option(ShortName = "c", Description = "Connection string to connect to database. Defaults to localhost")]
+        public string ConnectionString { get; } =
+           "data source=.;Database=Inshapardaz;integrated security=True;";
 
-         [Option(ShortName = "c", Description = "Connection string to connect to database. Defaults to localhost")]
-        public string ConnectionString { get; } = 
-            "data source=.;Database=Inshapardaz;integrated security=True;";
         public static int Main(string[] args)
         => CommandLineApplication.Execute<Program>(args);
 
@@ -31,7 +31,7 @@ namespace Inshaprdaz.Database.Migrations.Runner
                 .ConfigureRunner(rb => rb
                     .AddSqlServer()
                     .WithGlobalConnectionString(connectionString)
-                    .ScanIn(typeof(Program).Assembly).For.Migrations())
+                    .ScanIn(typeof(Inshapardaz.Database.Migrations.Migration000001_CreateLibrarySchema).Assembly).For.Migrations())
                 .AddLogging(lb => lb.AddFluentMigratorConsole())
                 .BuildServiceProvider(false);
         }
