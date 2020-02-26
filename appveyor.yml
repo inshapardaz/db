@@ -21,11 +21,15 @@ before_build:
 
 build_script:
   - cmd: dotnet build -c Release
-  - cmd: dotnet pack -c Release .\src\Inshapardaz.Database.Migrations\Inshapardaz.Database.Migrations.csproj
+  - cmd: dotnet pack -c Release .\src\Inshapardaz.Database.Migrations\Inshapardaz.Database.Migrations.csproj /p:PackageVersion=%APPVEYOR_BUILD_VERSION%
   - cmd: dotnet run --project .\src\Inshapardaz.Database.Migrations.Runner\Inshapardaz.Database.Migrations.Runner.csproj -- -c "%ConnectionString%"
+
+artifacts:
+- path: '**\*.nupkg'
+  name: NugetPackage
 
 deploy:
   - provider: NuGet
     api_key:
       secure: g5rGKvlzjcj1STw/jccuiFt+PUh9GBhQaAVBansGo0QNWclKuHVs33Gv3xoYekxR
-    artifact: .\src\Inshapardaz.Database.Migrations\bin\Release\*.nupkg/
+    artifact: /.*\.nupkg/
