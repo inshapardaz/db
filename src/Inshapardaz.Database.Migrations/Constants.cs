@@ -26,6 +26,7 @@ namespace Inshapardaz.Database.Migrations
         public static string Article => "Article";
         public static string ArticleText => "ArticleText";
         public static string BookPage => "BookPage";
+        public static string Library => "Library";
     }
 
     public static class Columns
@@ -38,5 +39,7 @@ namespace Inshapardaz.Database.Migrations
         public static string ImageId => "ImageId";
         public static string FileId => "FileId";
         public static string IsPublic => "IsPublic";
+
+        public static string Language => "Language";
     }
 }

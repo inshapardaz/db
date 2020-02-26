@@ -16,7 +16,7 @@ namespace Inshapardaz.Database.Migrations
                 .WithColumn(Columns.ImageId).AsInt32().Nullable()
                 .WithColumn(Columns.IsPublic).AsBoolean()
                 .WithColumn("IsPublished").AsBoolean().NotNullable().WithDefaultValue(0)
-                .WithColumn("Language").AsInt32()
+                .WithColumn(Columns.Language).AsInt32()
                 .WithColumn("Status").AsInt32().NotNullable().WithDefaultValue(0)
                 .WithColumn("SeriesId").AsInt32().Nullable().Indexed("IX_Book_SeriesId")
                 .WithColumn("SeriesIndex").AsInt32().Nullable()
