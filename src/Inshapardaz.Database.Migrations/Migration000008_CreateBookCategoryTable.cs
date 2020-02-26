@@ -7,28 +7,28 @@ namespace Inshapardaz.Database.Migrations
     {
         public override void Up()
         {
-            Create.Table("BookCategory")
-                .InSchema("Library")
-                .WithColumn("BookId").AsInt32()
+            Create.Table(Tables.BookCategory)
+                .InSchema(Schemas.Library)
+                .WithColumn(Columns.BookId).AsInt32()
                 .WithColumn("CategoryId").AsInt32().Indexed("IX_BookCategory_CategoryId");
 
             Create.PrimaryKey("PK_BookCategory")
-                .OnTable("BookCategory").WithSchema("Library")
-                .Columns("BookId", "CategoryId");
+                .OnTable(Tables.BookCategory).WithSchema(Schemas.Library)
+                .Columns(Columns.BookId, "CategoryId");
             Create.ForeignKey("FK_BookCategory_Category_CategoryId")
-                .FromTable("BookCategory").InSchema("Library").ForeignColumn("CategoryId")
-                .ToTable("Category").InSchema("Library").PrimaryColumn("Id")
+                .FromTable(Tables.BookCategory).InSchema(Schemas.Library).ForeignColumn("CategoryId")
+                .ToTable(Tables.Category).InSchema(Schemas.Library).PrimaryColumn(Columns.Id)
                 .OnDelete(System.Data.Rule.Cascade);
             Create.ForeignKey("FK_BookCategory_Book_BookId")
-                .FromTable("BookCategory").InSchema("Library").ForeignColumn("BookId")
-                .ToTable("Book").InSchema("Library").PrimaryColumn("Id")
+                .FromTable(Tables.BookCategory).InSchema(Schemas.Library).ForeignColumn(Columns.BookId)
+                .ToTable(Tables.Book).InSchema(Schemas.Library).PrimaryColumn(Columns.Id)
                 .OnDelete(System.Data.Rule.Cascade);
         }
 
         public override void Down()
         {
-            Delete.Table("BookCategory")
-                .InSchema("Library");
+            Delete.Table(Tables.BookCategory)
+                .InSchema(Schemas.Library);
         }
     }
 }

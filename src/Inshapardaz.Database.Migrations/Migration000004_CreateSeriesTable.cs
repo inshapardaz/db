@@ -7,26 +7,26 @@ namespace Inshapardaz.Database.Migrations
     {
         public override void Up()
         {
-            Create.Table("Series")
-                .InSchema("Library")
-                .WithColumn("Id").AsInt32().PrimaryKey().Identity()
-                .WithColumn("Name").AsString(int.MaxValue).NotNullable()
+            Create.Table(Tables.Series)
+                .InSchema(Schemas.Library)
+                .WithColumn(Columns.Id).AsInt32().PrimaryKey().Identity()
+                .WithColumn(Columns.Name).AsString(int.MaxValue).NotNullable()
                 // TODO : Add index
                 //.Indexed("IDX_Name")
-                .WithColumn("Description").AsString(int.MaxValue).Nullable()
-                .WithColumn("ImageId").AsInt32().Nullable();
+                .WithColumn(Columns.Description).AsString(int.MaxValue).Nullable()
+                .WithColumn(Columns.ImageId).AsInt32().Nullable();
 
             // TODO : Add Foreign key
             // Create.ForeignKey()
-            //     .FromTable("Series").InSchema("Library").ForeignColumn("ImageId")
-            //     .ToTable("File").InSchema("Library").PrimaryColumn("Id")
+            //     .FromTable("Series").InSchema(Schemas.Library).ForeignColumn("ImageId")
+            //     .ToTable(Tables.File).InSchema(Schemas.Library).PrimaryColumn(Columns.Id)
             //     .OnDelete(System.Data.Rule.SetDefault);
         }
 
         public override void Down()
         {
-            Delete.Table("Series")
-                .InSchema("Library");
+            Delete.Table(Tables.Series)
+                .InSchema(Schemas.Library);
         }
     }
 }

@@ -7,30 +7,30 @@ namespace Inshapardaz.Database.Migrations
     {
         public override void Up()
         {
-            Create.Table("SeriesCategory")
-                .InSchema("Library")
+            Create.Table(Tables.SeriesCategory)
+                .InSchema(Schemas.Library)
                 .WithColumn("SeriesId").AsInt32()
                 .WithColumn("CategoryId").AsInt32().Indexed("IX_SeriesCategory_CategoryId");
 
             Create.PrimaryKey("PK_SeriesCategory")
-                .OnTable("SeriesCategory").WithSchema("Library")
+                .OnTable(Tables.SeriesCategory).WithSchema(Schemas.Library)
                 .Columns("SeriesId", "CategoryId");
             
             Create.ForeignKey("FK_SeriesCategory_Series_SeriesId")
-                .FromTable("SeriesCategory").InSchema("Library").ForeignColumn("SeriesId")
-                .ToTable("Series").InSchema("Library").PrimaryColumn("Id")
+                .FromTable(Tables.SeriesCategory).InSchema(Schemas.Library).ForeignColumn("SeriesId")
+                .ToTable(Tables.Series).InSchema(Schemas.Library).PrimaryColumn(Columns.Id)
                 .OnDelete(System.Data.Rule.Cascade);
             
             Create.ForeignKey("FK_SeriesCategory_Category_CategoryId")
-                .FromTable("SeriesCategory").InSchema("Library").ForeignColumn("CategoryId")
-                .ToTable("Category").InSchema("Library").PrimaryColumn("Id")
+                .FromTable(Tables.SeriesCategory).InSchema(Schemas.Library).ForeignColumn("CategoryId")
+                .ToTable(Tables.Category).InSchema(Schemas.Library).PrimaryColumn(Columns.Id)
                 .OnDelete(System.Data.Rule.Cascade);
         }
 
         public override void Down()
         {
-            Delete.Table("SeriesCategory")
-                .InSchema("Library");
+            Delete.Table(Tables.SeriesCategory)
+                .InSchema(Schemas.Library);
         }
     }
 }

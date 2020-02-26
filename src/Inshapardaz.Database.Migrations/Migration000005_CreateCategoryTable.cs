@@ -7,16 +7,16 @@ namespace Inshapardaz.Database.Migrations
     {
         public override void Up()
         {
-            Create.Table("Category")
-                .InSchema("Library")
-                .WithColumn("Id").AsInt32().PrimaryKey().Identity()
-                .WithColumn("Name").AsString(int.MaxValue).NotNullable();
+            Create.Table(Tables.Category)
+                .InSchema(Schemas.Library)
+                .WithColumn(Columns.Id).AsInt32().PrimaryKey().Identity()
+                .WithColumn(Columns.Name).AsString(int.MaxValue).NotNullable();
         }
 
         public override void Down()
         {
-            Delete.Table("Category")
-                .InSchema("Library");
+            Delete.Table(Tables.Category)
+                .InSchema(Schemas.Library);
         }
     }
 }

@@ -7,14 +7,14 @@ namespace Inshapardaz.Database.Migrations
     {
         public override void Up()
         {
-            Create.Schema("Library");
-            Create.Schema("Inshapardaz");
+            Create.Schema(Schemas.Library);
+            Create.Schema(Schemas.Inshapardaz);
         }
 
         public override void Down()
         {
-            Delete.Schema("Library");
-            Delete.Schema("Inshapardaz");
+            Delete.Schema(Schemas.Library);
+            Delete.Schema(Schemas.Inshapardaz);
         }
     }
 }

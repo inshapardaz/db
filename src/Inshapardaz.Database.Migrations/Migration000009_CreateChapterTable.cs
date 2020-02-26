@@ -7,22 +7,22 @@ namespace Inshapardaz.Database.Migrations
     {
         public override void Up()
         {
-            Create.Table("Chapter")
-                .InSchema("Library")
-                .WithColumn("Id").AsInt32().PrimaryKey().Identity()
+            Create.Table(Tables.Chapter)
+                .InSchema(Schemas.Library)
+                .WithColumn(Columns.Id).AsInt32().PrimaryKey().Identity()
                 .WithColumn("Title").AsString(int.MaxValue).NotNullable()
-                .WithColumn("BookId").AsInt32().Indexed("IX_Chapter_BookId")
+                .WithColumn(Columns.BookId).AsInt32().Indexed("IX_Chapter_BookId")
                 .WithColumn("ChapterNumber").AsInt32();
             Create.ForeignKey("FK_Chapter_Book_BookId")
-                .FromTable("Chapter").InSchema("Library").ForeignColumn("BookId")
-                .ToTable("Book").InSchema("Library").PrimaryColumn("Id")
+                .FromTable(Tables.Chapter).InSchema(Schemas.Library).ForeignColumn(Columns.BookId)
+                .ToTable(Tables.Book).InSchema(Schemas.Library).PrimaryColumn(Columns.Id)
                 .OnDelete(System.Data.Rule.Cascade);
         }
 
         public override void Down()
         {
-            Delete.Table("Chapter")
-                .InSchema("Library");
+            Delete.Table(Tables.Chapter)
+                .InSchema(Schemas.Library);
         }
     }
 }

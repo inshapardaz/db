@@ -7,25 +7,25 @@ namespace Inshapardaz.Database.Migrations
     {
         public override void Up()
         {
-            Create.Table("Issue")
-                .InSchema("Library")
-                .WithColumn("Id").AsInt32().PrimaryKey().Identity()
+            Create.Table(Tables.Issue)
+                .InSchema(Schemas.Library)
+                .WithColumn(Columns.Id).AsInt32().PrimaryKey().Identity()
                 .WithColumn("PeriodicalId").AsInt32().NotNullable().WithDefaultValue(0).Indexed("IX_Issue_PeriodicalId")
                 .WithColumn("Volumenumber").AsInt32().NotNullable()
                 .WithColumn("IssueNumber").AsInt32().NotNullable()
-                .WithColumn("ImageId").AsInt32().Nullable()
+                .WithColumn(Columns.ImageId).AsInt32().Nullable()
                 .WithColumn("IssueDate").AsDateTime2().NotNullable();
 
             Create.ForeignKey("FK_Issue_Periodical_PeriodicalId")
-                .FromTable("Issue").InSchema("Library").ForeignColumn("PeriodicalId")
-                .ToTable("Periodical").InSchema("Library").PrimaryColumn("Id")
+                .FromTable(Tables.Issue).InSchema(Schemas.Library).ForeignColumn("PeriodicalId")
+                .ToTable(Tables.Periodical).InSchema(Schemas.Library).PrimaryColumn(Columns.Id)
                 .OnDelete(System.Data.Rule.Cascade);
         }
 
         public override void Down()
         {
-            Delete.Table("Issue")
-                .InSchema("Library");
+            Delete.Table(Tables.Issue)
+                .InSchema(Schemas.Library);
         }
     }
 }

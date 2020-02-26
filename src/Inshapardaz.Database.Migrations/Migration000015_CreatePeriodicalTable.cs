@@ -7,23 +7,23 @@ namespace Inshapardaz.Database.Migrations
     {
         public override void Up()
         {
-            Create.Table("Periodical")
-                .InSchema("Library")
-                .WithColumn("Id").AsInt32().PrimaryKey().Identity()
+            Create.Table(Tables.Periodical)
+                .InSchema(Schemas.Library)
+                .WithColumn(Columns.Id).AsInt32().PrimaryKey().Identity()
                 .WithColumn("Title").AsString(int.MaxValue).NotNullable()
-                .WithColumn("Description").AsString(int.MaxValue).Nullable()
+                .WithColumn(Columns.Description).AsString(int.MaxValue).Nullable()
                 .WithColumn("CategoryId").AsInt32().Nullable().Indexed("IX_Periodical_CategoryId")
-                .WithColumn("ImageId").AsInt32().Nullable();
+                .WithColumn(Columns.ImageId).AsInt32().Nullable();
             
             Create.ForeignKey("FK_Periodical_PeriodicalCategory_CategoryId")
-                .FromTable("Periodical").InSchema("Library").ForeignColumn("CategoryId")
-                .ToTable("PeriodicalCategory").InSchema("Library").PrimaryColumn("Id");
+                .FromTable(Tables.Periodical).InSchema(Schemas.Library).ForeignColumn("CategoryId")
+                .ToTable(Tables.PeriodicalCategory).InSchema(Schemas.Library).PrimaryColumn(Columns.Id);
         }
 
         public override void Down()
         {
-            Delete.Table("Periodical")
-                .InSchema("Library");
+            Delete.Table(Tables.Periodical)
+                .InSchema(Schemas.Library);
         }
     }
 }

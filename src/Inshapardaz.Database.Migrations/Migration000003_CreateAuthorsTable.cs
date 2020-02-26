@@ -7,24 +7,17 @@ namespace Inshapardaz.Database.Migrations
     {
         public override void Up()
         {
-            Create.Table("Author")
-                .InSchema("Library")
-                .WithColumn("Id").AsInt32().PrimaryKey().Identity()
-                .WithColumn("Name").AsString(int.MaxValue).NotNullable() 
-                // TODO :  Add index
-                //.Indexed("IDX_AuthorName")
-                .WithColumn("ImageId").AsInt32().Nullable();
-            // TODO : Add foreign key
-            // Create.ForeignKey()
-            //     .FromTable("Author").InSchema("Library").ForeignColumn("ImageId")
-            //     .ToTable("File").InSchema("Library").PrimaryColumn("Id")
-            //     .OnDelete(System.Data.Rule.SetDefault);
+            Create.Table(Tables.Author)
+                .InSchema(Schemas.Library)
+                .WithColumn(Columns.Id).AsInt32().PrimaryKey().Identity()
+                .WithColumn(Columns.Name).AsString(int.MaxValue).NotNullable() 
+                .WithColumn(Columns.ImageId).AsInt32().Nullable();
         }
 
         public override void Down()
         {
-            Delete.Table("Author")
-                .InSchema("Library");
+            Delete.Table(Tables.Author)
+                .InSchema(Schemas.Library);
         }
     }
 }
