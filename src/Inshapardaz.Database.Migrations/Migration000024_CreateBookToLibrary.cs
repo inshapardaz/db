@@ -9,7 +9,8 @@ namespace Inshapardaz.Database.Migrations
         {
             Alter.Table(Tables.Book).InSchema(Schemas.Library)
                  .AddColumn("LibraryId")
-                 .AsInt32();
+                 .AsInt32()
+                 .Nullable();
             
             Create.ForeignKey("FK_Book_Library")
                   .FromTable(Tables.Book).InSchema(Schemas.Library).ForeignColumn("LibraryId")
