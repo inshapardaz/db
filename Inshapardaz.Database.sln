@@ -11,6 +11,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{8071A586-7
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inshapardaz.Database.Migrations.Tests", "test\Inshapardaz.Database.Migrations.Tests\Inshapardaz.Database.Migrations.Tests.csproj", "{AC3AD3E7-3F35-4B1F-9234-9898CABB573E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inshapardaz.Database.Migrations.Runner", "src\Inshapardaz.Database.Migrations.Runner\Inshapardaz.Database.Migrations.Runner.csproj", "{8149B277-AD39-4AA8-A0D2-615B7A2506DC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -48,9 +50,22 @@ Global
 		{AC3AD3E7-3F35-4B1F-9234-9898CABB573E}.Release|x64.Build.0 = Release|Any CPU
 		{AC3AD3E7-3F35-4B1F-9234-9898CABB573E}.Release|x86.ActiveCfg = Release|Any CPU
 		{AC3AD3E7-3F35-4B1F-9234-9898CABB573E}.Release|x86.Build.0 = Release|Any CPU
+		{8149B277-AD39-4AA8-A0D2-615B7A2506DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8149B277-AD39-4AA8-A0D2-615B7A2506DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8149B277-AD39-4AA8-A0D2-615B7A2506DC}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{8149B277-AD39-4AA8-A0D2-615B7A2506DC}.Debug|x64.Build.0 = Debug|Any CPU
+		{8149B277-AD39-4AA8-A0D2-615B7A2506DC}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{8149B277-AD39-4AA8-A0D2-615B7A2506DC}.Debug|x86.Build.0 = Debug|Any CPU
+		{8149B277-AD39-4AA8-A0D2-615B7A2506DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8149B277-AD39-4AA8-A0D2-615B7A2506DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8149B277-AD39-4AA8-A0D2-615B7A2506DC}.Release|x64.ActiveCfg = Release|Any CPU
+		{8149B277-AD39-4AA8-A0D2-615B7A2506DC}.Release|x64.Build.0 = Release|Any CPU
+		{8149B277-AD39-4AA8-A0D2-615B7A2506DC}.Release|x86.ActiveCfg = Release|Any CPU
+		{8149B277-AD39-4AA8-A0D2-615B7A2506DC}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{715B3DC9-510D-4CF9-B2C2-5A68DE6D9331} = {FFB90627-F18F-444B-8B98-F99EEAF16FD3}
 		{AC3AD3E7-3F35-4B1F-9234-9898CABB573E} = {8071A586-7111-4591-B0D2-77471441DFF2}
+		{8149B277-AD39-4AA8-A0D2-615B7A2506DC} = {FFB90627-F18F-444B-8B98-F99EEAF16FD3}
 	EndGlobalSection
 EndGlobal

@@ -1,9 +1,9 @@
-﻿using FluentMigrator.Runner;
+﻿using System;
+using FluentMigrator.Runner;
 using McMaster.Extensions.CommandLineUtils;
 using Microsoft.Extensions.DependencyInjection;
-using System;
 
-namespace Inshapardaz.Database.Migrations
+namespace Inshaprdaz.Database.Migrations.Runner
 {
     class Program
     {
