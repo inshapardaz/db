@@ -13,10 +13,13 @@ DROP TABLE Library.Article;
 DROP TABLE Library.Issue;
 DROP TABLE Library.Periodical;
 DROP TABLE Library.PeriodicalCategory;
+DROP TABLE Library.BookShelfBook;
+DROP TABLE Library.BookShelf;
 DROP TABLE Library.Book;
 DROP TABLE Library.Author;
 DROP TABLE Library.Category;
 DROP TABLE Library.Series;
+DROP TABLE Library.Library;
 DROP TABLE Inshapardaz.[File];
 DROP SCHEMA Library
 DROP SCHEMA Inshapardaz;
