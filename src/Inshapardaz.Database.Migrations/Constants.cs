@@ -3,7 +3,7 @@ namespace Inshapardaz.Database.Migrations
     public static class Schemas
     {
         public static string Library => "Library";
-        public static string Inshapardaz = "Inshapardaz";
+        public static string Inshapardaz => "Inshapardaz";
     }
 
     public static class Tables
