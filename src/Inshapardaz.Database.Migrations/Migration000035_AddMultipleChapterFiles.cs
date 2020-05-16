@@ -8,7 +8,7 @@ namespace Inshapardaz.Database.Migrations
         public override void Up()
         {
             Alter.Table(Tables.ChapterContent).InSchema(Schemas.Library)
-                .AddColumn("FileId").AsInt32().NotNullable();
+                .AddColumn("FileId").AsInt32().Nullable();
 
             Create.ForeignKey("FK_ChapterContent_File_FileId")
                 .FromTable(Tables.ChapterContent).InSchema(Schemas.Library).ForeignColumn(Columns.FileId)
