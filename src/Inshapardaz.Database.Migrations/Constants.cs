@@ -4,6 +4,8 @@ namespace Inshapardaz.Database.Migrations
     {
         public static string Library => "Library";
         public static string Inshapardaz => "Inshapardaz";
+
+        public static string Dbo => "dbo";
     }
 
     public static class Tables
