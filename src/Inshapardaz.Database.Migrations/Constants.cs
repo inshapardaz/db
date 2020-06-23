@@ -18,6 +18,7 @@ namespace Inshapardaz.Database.Migrations
         public static string Chapter => "Chapter";
         public static string ChapterContent => "ChapterContent";
         public static string BookFile => "BookFile";
+        public static string BookContent => "BookContent";
         public static string RecentBooks => "RecentBooks";
         public static string FavoriteBooks => "FavoriteBooks";
         public static string PeriodicalCategory => "PeriodicalCategory";

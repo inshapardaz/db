@@ -3,7 +3,7 @@
 namespace Inshapardaz.Database.Migrations
 {
     [Migration(000037)]
-    public class Migration000036_RemoveChapterContentMimeType : Migration
+    public class Migration000037_RemoveChapterContentMimeType : Migration
     {
         public override void Up()
         {
