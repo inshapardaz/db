@@ -7,7 +7,7 @@ environment:
   ConnectionStringTest:
     secure: xRPJOkFVcWlOPF0wlbbRsjmPXiDSnTjd03Q4aM6bI1hjzjjUsH4wxNSJRnuH3DT9Z3x+fGXmdVdgexKx/ghFpC6znjlEgoE8gL00q86zZ+xcE3piP/6IfH8YutYJ5+OdgOS027eYbt2Ao+LmoZyjy1bGEr3af8wr1NwJrhsHshuzlNrUIpLZ4rbjuMqfiNofNLACeTJ5pif6Z00v2pSRLyEz9QnemZdtwM+zKV9IURTB9UHJFPf36DeaaVU6LCCDMMUCbgVcr1R8rxTnl2UgXZKqX7Q33/Gb2A6VEf/bm7OaqWmr/xAKRzgvInnEcftT
   ConnectionString:
-    secure: 77HcU2a57ZxP00HyoA80j3nY9GGcSdBuuUoyj81g+Dc1uzwuINWvzj6NcgMOAf16maRocp7N3lrgTInM8Ep+r+2s1yRx1tPojXTWlBYJVUah8kQKH1IEW7uZBq4L6Vga7dh8CRSuWh8YNVRczFTxAw==
+    secure: bomDgoW1nCfahKh9VWJoGeOTWwZw0ZHbXvYstOYVy995EvVgN4lEF+lZltjjcH8zWh+RZmjflLuPJuwApeyBwBy9KItTTiDqKVXMQxuR16QAm+m8vYAuxi5e//2PGeQ5vFEnKy9Wke365Jn9ZFILWQ==
 
 dotnet_csproj:
   patch: true
