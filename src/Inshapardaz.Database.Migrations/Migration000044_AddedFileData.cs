@@ -10,7 +10,7 @@ namespace Inshapardaz.Database.Migrations
             Create.Table("FileData")
             .InSchema(Schemas.Dbo)
             .WithColumn("Path").AsString().PrimaryKey()
-            .WithColumn("Content").AsByte();
+            .WithColumn("Content").AsBinary(int.MaxValue);
         }
 
         public override void Down()
