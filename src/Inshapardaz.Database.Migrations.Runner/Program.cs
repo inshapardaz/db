@@ -31,7 +31,7 @@ namespace Inshapardaz.Database.Migrations.Runner
                 .ConfigureRunner(rb => rb
                     .AddSqlServer()
                     .WithGlobalConnectionString(connectionString)
-                    .ScanIn(typeof(Inshapardaz.Database.Migrations.Migration000001_CreateLibrarySchema).Assembly).For.Migrations())
+                    .ScanIn(typeof(Migration000001_CreateLibrarySchema).Assembly).For.Migrations())
                 .AddLogging(lb => lb.AddFluentMigratorConsole())
                 .BuildServiceProvider(false);
         }
