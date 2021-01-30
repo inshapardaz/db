@@ -12,8 +12,7 @@ namespace Inshapardaz.Database.Migrations
 
             Create.ForeignKey("FK_BookPage_Chapter_ChapterId")
             .FromTable(Tables.BookPage).InSchema(Schemas.Dbo).ForeignColumn("ChapterId")
-            .ToTable(Tables.Chapter).InSchema(Schemas.Dbo).PrimaryColumn(Columns.Id)
-            .OnDelete(System.Data.Rule.SetNull);
+            .ToTable(Tables.Chapter).InSchema(Schemas.Dbo).PrimaryColumn(Columns.Id);
         }
 
         public override void Down()
