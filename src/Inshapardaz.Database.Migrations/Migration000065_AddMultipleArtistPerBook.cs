@@ -3,7 +3,7 @@
 namespace Inshapardaz.Database.Migrations
 {
     [Migration(000065)]
-    public class Migration000064_AddMultipleArtistPerBook : Migration
+    public class Migration000065_AddMultipleArtistPerBook : Migration
     {
         public override void Up()
         {
