@@ -8,7 +8,7 @@ namespace Inshapardaz.Database.Migrations
         public override void Up()
         {
             Alter.Table(Tables.BookPage).InSchema(Schemas.Dbo)
-                .AddColumn("ReviewerAccoutId").AsGuid().Nullable()
+                .AddColumn("ReviewerAccountId").AsInt32().Nullable()
                 .AddColumn("ReviewerAssignTimeStamp").AsDateTime2().Nullable();
 
             Rename.Column("AccountId").OnTable(Tables.BookPage).InSchema(Schemas.Dbo)
@@ -19,7 +19,7 @@ namespace Inshapardaz.Database.Migrations
 
         public override void Down()
         {
-            Delete.Column("ReviewerAccoutId").FromTable(Tables.BookPage).InSchema(Schemas.Dbo);
+            Delete.Column("ReviewerAccountId").FromTable(Tables.BookPage).InSchema(Schemas.Dbo);
             Delete.Column("ReviewerAssignTimeStamp").FromTable(Tables.BookPage).InSchema(Schemas.Dbo);
             Rename.Column("WriterAccountId").OnTable(Tables.BookPage).InSchema(Schemas.Dbo)
                  .To("AccountId");
