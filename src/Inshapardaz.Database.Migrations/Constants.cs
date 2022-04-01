@@ -2,49 +2,51 @@ namespace Inshapardaz.Database.Migrations
 {
     public static class Schemas
     {
-        public static string Library => "Library";
-        public static string Inshapardaz => "Inshapardaz";
+        public const string Library = "Library";
+        public const string Inshapardaz = "Inshapardaz";
 
-        public static string Dbo => "dbo";
+        public const string Dbo = "dbo";
     }
 
     public static class Tables
     {
-        public static string Author => "Author";
-        public static string File => "File";
-        public static string Series => "Series";
-        public static string Category => "Category";
-        public static string Book => "Book";
-        public static string SeriesCategory => "SeriesCategory";
-        public static string BookCategory => "BookCategory";
-        public static string Chapter => "Chapter";
-        public static string ChapterContent => "ChapterContent";
-        public static string BookFile => "BookFile";
-        public static string BookContent => "BookContent";
-        public static string RecentBooks => "RecentBooks";
-        public static string FavoriteBooks => "FavoriteBooks";
-        public static string PeriodicalCategory => "PeriodicalCategory";
-        public static string Periodical => "Periodical";
-        public static string Issue => "Issue";
-        public static string Article => "Article";
-        public static string ArticleText => "ArticleText";
-        public static string BookPage => "BookPage";
-        public static string Library => "Library";
-        public static string BookShelf => "BookShelf";
-        public static string BookShelfBook => "BookShelfBook";
+        public const string Author = "Author";
+        public const string File = "File";
+        public const string Series = "Series";
+        public const string Category = "Category";
+        public const string Book = "Book";
+        public const string SeriesCategory = "SeriesCategory";
+        public const string BookCategory = "BookCategory";
+        public const string Chapter = "Chapter";
+        public const string ChapterContent = "ChapterContent";
+        public const string BookFile = "BookFile";
+        public const string BookContent = "BookContent";
+        public const string RecentBooks = "RecentBooks";
+        public const string FavoriteBooks = "FavoriteBooks";
+        public const string PeriodicalCategory = "PeriodicalCategory";
+        public const string Periodical = "Periodical";
+        public const string Issue = "Issue";
+        public const string Article = "Article";
+        public const string ArticleText = "ArticleText";
+        public const string BookPage = "BookPage";
+        public const string Library = "Library";
+        public const string BookShelf = "BookShelf";
+        public const string BookShelfBook = "BookShelfBook";
+        public const string Corrections = "Corrections";
+
     }
 
     public static class Columns
     {
-        public static string Id => "Id";
-        public static string Name => "Name";
-        public static string Description => "Description";
-        public static string DateCreated => "DateCreated";
-        public static string BookId => "BookId";
-        public static string ImageId => "ImageId";
-        public static string FileId => "FileId";
-        public static string IsPublic => "IsPublic";
+        public const string Id = "Id";
+        public const string Name = "Name";
+        public const string Description = "Description";
+        public const string DateCreated = "DateCreated";
+        public const string BookId = "BookId";
+        public const string ImageId = "ImageId";
+        public const string FileId = "FileId";
+        public const string IsPublic = "IsPublic";
 
-        public static string Language => "Language";
+        public const string Language = "Language";
     }
 }
