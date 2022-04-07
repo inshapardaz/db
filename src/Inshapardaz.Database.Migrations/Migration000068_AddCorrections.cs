@@ -9,14 +9,13 @@ namespace Inshapardaz.Database.Migrations
         {
             Delete.Table(Tables.Corrections);
             Create.Table(Tables.Corrections).InSchema(Schemas.Dbo)
-            .WithColumn("Language").AsString().Indexed("IDX_CORRECTION_LANGUAGE")
-            .WithColumn("Profile").AsString().Indexed("IDX_PROFILE")
-            .WithColumn("IncorrectText").AsString().NotNullable()
-            .WithColumn("CorrectText").AsString().NotNullable()
-            .WithColumn("Usage").AsInt64().WithDefaultValue(0);
+                .WithColumn("Id").AsInt64().Identity().PrimaryKey()
+                .WithColumn("Language").AsString().Indexed("IDX_CORRECTION_LANGUAGE")
+                .WithColumn("Profile").AsString().Indexed("IDX_PROFILE")
+                .WithColumn("IncorrectText").AsString().NotNullable()
+                .WithColumn("CorrectText").AsString().NotNullable()
+                .WithColumn("Usage").AsInt64().WithDefaultValue(0);
 
-            Create.PrimaryKey("PK_Corrections").OnTable(Tables.Corrections).WithSchema(Schemas.Dbo)
-                .Columns("Language", "Profile", "IncorrectText");
         }
 
         public override void Down()
