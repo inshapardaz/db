@@ -10,7 +10,7 @@ namespace Inshapardaz.Database.Migrations
             Alter.Table(Tables.Chapter).
                 InSchema(Schemas.Dbo)
                 .AddColumn("Status").AsInt32().WithDefaultValue(0)
-                .AddColumn("WriterAccountId").AsGuid().Nullable()
+                .AddColumn("WriterAccountId").AsInt32().Nullable()
                 .AddColumn("WriterAssignTimeStamp").AsDateTime2().Nullable()
                 .AddColumn("ReviewerAccountId").AsInt32().Nullable()
                 .AddColumn("ReviewerAssignTimeStamp").AsDateTime2().Nullable();
