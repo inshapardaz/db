@@ -33,7 +33,9 @@ namespace Inshapardaz.Database.Migrations
         public const string BookShelf = "BookShelf";
         public const string BookShelfBook = "BookShelfBook";
         public const string Corrections = "Corrections";
-
+        public const string IssueChapter = "IssueChapter";
+        public const string IssuePage = "IssuePage";
+        public const string IssueChapterContent = "IssueChapterContent";
     }
 
     public static class Columns
