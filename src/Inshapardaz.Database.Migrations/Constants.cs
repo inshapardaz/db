@@ -28,6 +28,7 @@ namespace Inshapardaz.Database.Migrations
         public const string Issue = "Issue";
         public const string Article = "Article";
         public const string ArticleText = "ArticleText";
+        public const string ArticleContent = "ArticleContent";
         public const string BookPage = "BookPage";
         public const string Library = "Library";
         public const string BookShelf = "BookShelf";
