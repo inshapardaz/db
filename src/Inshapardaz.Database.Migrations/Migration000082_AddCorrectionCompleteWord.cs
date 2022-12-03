@@ -9,7 +9,7 @@ namespace Inshapardaz.Database.Migrations
         {
             Alter.Table(Tables.Corrections).InSchema(Schemas.Dbo)
                 .AddColumn("CompleteWord")
-                .AsBinary()
+                .AsBoolean()
                 .WithDefaultValue(0);
         }
 
