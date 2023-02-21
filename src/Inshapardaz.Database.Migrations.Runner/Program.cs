@@ -9,7 +9,7 @@ namespace Inshapardaz.Database.Migrations.Runner
     {
         [Option(ShortName = "c", Description = "Connection string to connect to database. Defaults to localhost")]
         public string ConnectionString { get; } =
-           "data source=.;Database=Inshapardaz;integrated security=True;";
+           "data source=.;Database=Nawishta;integrated security=True;";
 
         public static int Main(string[] args)
         => CommandLineApplication.Execute<Program>(args);

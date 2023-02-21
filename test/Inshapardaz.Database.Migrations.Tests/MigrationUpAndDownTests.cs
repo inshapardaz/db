@@ -8,7 +8,7 @@ namespace Inshapardaz.Database.Migrations.Tests
     public class MigrationUpAndDownTests
     {
         private MigrationHelper _helper; 
-        private const string _connectionString = "data source=.;Database=Inshapardaz;integrated security=True;"; 
+        private const string _connectionString = "data source=.;Database=nawishta_test;integrated security=True;"; 
         public MigrationUpAndDownTests() 
         { 
             _helper = new MigrationHelper(_connectionString); 
