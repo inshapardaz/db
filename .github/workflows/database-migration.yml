@@ -10,10 +10,6 @@ jobs:
 
   build:
 
-    strategy:
-      matrix:
-        configuration: [Debug, Release]
-
     runs-on: windows-latest  # For a list of available runner types, refer to
                              # https://help.github.com/en/actions/reference/workflow-syntax-for-github-actions#jobsjob_idruns-on
     steps:
@@ -29,3 +25,15 @@ jobs:
 
     - name: Build project
       run: dotnet build -c Release
+      
+    - name: Deploy Database 1
+      run: dotnet run --project .\src\Inshapardaz.Database.Migrations.Runner\Inshapardaz.Database.Migrations.Runner.csproj -- -c "${{ secrets.Database1 }}"
+            
+    - name: Deploy Database 2
+      run: dotnet run --project .\src\Inshapardaz.Database.Migrations.Runner\Inshapardaz.Database.Migrations.Runner.csproj -- -c "${{ secrets.Database2 }}"
+          
+    - name: Deploy Database 3
+      run: dotnet run --project .\src\Inshapardaz.Database.Migrations.Runner\Inshapardaz.Database.Migrations.Runner.csproj -- -c "${{ secrets.Database3 }}"
+          
+    - name: Deploy Database 4
+      run: dotnet run --project .\src\Inshapardaz.Database.Migrations.Runner\Inshapardaz.Database.Migrations.Runner.csproj -- -c "${{ secrets.Database4 }}"
