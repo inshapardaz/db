@@ -15,7 +15,7 @@ namespace Inshapardaz.Database.Migrations
                 .AsString().WithDefaultValue("Database");
             Alter.Table(Tables.Library).InSchema(Schemas.Dbo)
                 .AddColumn("FileStoreSource")
-                .AsString();
+                .AsString().Nullable();
         }
 
         public override void Down()
@@ -27,8 +27,8 @@ namespace Inshapardaz.Database.Migrations
                 .FromTable(Tables.Library)
                 .InSchema(Schemas.Dbo);
             Delete.Column("FileStoreSource")
-            .FromTable(Tables.Library)
-            .InSchema(Schemas.Dbo);
+                .FromTable(Tables.Library)
+                .InSchema(Schemas.Dbo);
         }
     }
 }
