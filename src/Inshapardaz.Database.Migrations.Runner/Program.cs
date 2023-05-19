@@ -11,6 +11,9 @@ namespace Inshapardaz.Database.Migrations.Runner
         public string ConnectionString { get; } =
            "data source=.;Database=Nawishta;integrated security=True;";
 
+        [Option(ShortName = "v", Description = "Version to rollback to")]
+        public long? Version { get; } = null;
+
         public static int Main(string[] args)
         => CommandLineApplication.Execute<Program>(args);
 
@@ -20,7 +23,7 @@ namespace Inshapardaz.Database.Migrations.Runner
 
             using (var scope = serviceProvider.CreateScope())
             {
-                UpdateDatabase(scope.ServiceProvider);
+                UpdateDatabase(scope.ServiceProvider, Version);
             }
         }
 
@@ -36,10 +39,17 @@ namespace Inshapardaz.Database.Migrations.Runner
                 .BuildServiceProvider(false);
         }
 
-        private static void UpdateDatabase(IServiceProvider serviceProvider)
+        private static void UpdateDatabase(IServiceProvider serviceProvider, long? rollbackVersion = null)
         {
             var runner = serviceProvider.GetRequiredService<IMigrationRunner>();
-            runner.MigrateUp();
+            if (rollbackVersion.HasValue)
+            {
+                runner.MigrateDown(rollbackVersion.Value);
+            }
+            else
+            {
+                runner.MigrateUp();
+            }
         }
     }
 }

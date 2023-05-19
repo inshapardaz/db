@@ -8,6 +8,8 @@ namespace Inshapardaz.Database.Migrations
         public override void Up()
         {
             Alter.Table(Tables.BookShelf).InSchema(Schemas.Dbo)
+                .AddColumn(Columns.Name)
+                .AsString()
                 .AddColumn(Columns.Description)
                 .AsString().Nullable()
                 .AddColumn(Columns.IsPublic)
@@ -22,6 +24,7 @@ namespace Inshapardaz.Database.Migrations
         public override void Down()
         {
             Delete.Column(Columns.IsPublic)
+                .Column(Columns.Name)
                 .Column(Columns.Description)
                 .Column(Columns.ImageId)
                 .FromTable(Tables.BookShelf)
