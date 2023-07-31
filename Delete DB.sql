@@ -1,5 +1,4 @@
 DROP TABLE VersionInfo;
-
 DROP TABLE Dbo.RecentBooks;
 DROP TABLE Dbo.FavoriteBooks;
 DROP TABLE Dbo.ArticleAuthor;
