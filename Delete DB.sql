@@ -1,9 +1,9 @@
 DROP TABLE VersionInfo;
 DROP TABLE Dbo.RecentBooks;
 DROP TABLE Dbo.FavoriteBooks;
-DROP TABLE Dbo.ArticleAuthor;
-DROP TABLE Dbo.ArticleContent;
-DROP TABLE Dbo.Article;
+DROP TABLE Dbo.IssueArticleAuthor;
+DROP TABLE Dbo.IssueArticleContent;
+DROP TABLE Dbo.IssueArticle;
 DROP TABLE Dbo.IssueContent;
 DROP TABLE Dbo.IssuePage;
 DROP TABLE Dbo.Issue;
