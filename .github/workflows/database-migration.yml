@@ -25,9 +25,6 @@ jobs:
       - name: Build project
         run: dotnet build -c Release
 
-      - name: Deploy Database 1
-        run: dotnet run --project .\src\Inshapardaz.Database.Migrations.Runner\Inshapardaz.Database.Migrations.Runner.csproj -- -c "${{ secrets.Database1 }}"
-
       - name: Deploy Database 2
         run: dotnet run --project .\src\Inshapardaz.Database.Migrations.Runner\Inshapardaz.Database.Migrations.Runner.csproj -- -c "${{ secrets.Database2 }}"
 
