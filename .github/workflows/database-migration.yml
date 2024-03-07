@@ -36,3 +36,6 @@ jobs:
 
       - name: Deploy Database 5
         run: dotnet run --project .\src\Inshapardaz.Database.Migrations.Runner\Inshapardaz.Database.Migrations.Runner.csproj -- -c "${{ secrets.Database5 }}"
+
+      - name: Deploy Database 6
+        run: dotnet run --project .\src\Inshapardaz.Database.Migrations.Runner\Inshapardaz.Database.Migrations.Runner.csproj -- -c "${{ secrets.Database6 }}"
